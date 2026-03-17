@@ -1,7 +1,8 @@
 name: athlos
 description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+version: 0.0.1
+homepage: "https://pub.dev/packages/athlos/"
+repository: "https://github.com/RayLabz/athlos_dart"
 
 environment:
   sdk: ^3.9.2
