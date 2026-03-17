@@ -4,9 +4,9 @@ import '../position/world_position.dart';
 
 abstract class WorldSession<CameraPosition extends WorldPosition, CameraDirection extends Angle3D> {
 
-  String id; // The unique identifier for the world session, which can be used for database storage and retrieval.
+  String id; // The unique identifier for the world session.
   String playerID; // The ID of the player associated with the session, which can be
-  String worldID; // The ID of the world associated with the session, which can be used for database storage and retrieval.
+  String worldID; // The ID of the world associated with the session.
   String ipAddress; // The IP address of the player associated with the session, which can be used for security and analytics.
 
   int createdOn = DateTime.now().millisecondsSinceEpoch; // The timestamp of when the session was created, which can be used for account management and analytics.

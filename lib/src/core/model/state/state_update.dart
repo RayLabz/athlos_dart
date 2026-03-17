@@ -3,7 +3,7 @@ import '../world/terrain_cell.dart';
 
 abstract class StateUpdate<EntityType extends Entity, TerrainCellType extends TerrainCell> {
 
-  String worldSessionID; // The ID of the world session associated with this state update, which can be used for database storage and retrieval.
+  String worldSessionID; // The ID of the world session associated with this state update.
   Map<String, dynamic> entityUpdates = {}; // A map of entity IDs to their updated properties, representing the changes to the entities in the game world since the last state update.
   Map<String, dynamic> terrainCellUpdates = {}; // A map of terrain cell hashes to their updated properties, representing the changes to the terrain cells in the game world since the last state update.
   List<String> removedEntityIDs = []; // A list of entity IDs that have been removed from the game world since the last state update, which can be used for synchronization and analytics.

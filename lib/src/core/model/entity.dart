@@ -2,7 +2,7 @@ import 'package:athlos/src/core/model/transform/generic_transform.dart';
 
 /// Represents an entity in the world, with a unique ID, position, and other properties.
 abstract class Entity<TransformType extends Transform> {
-  // The unique identifier for this entity, which can be used for database storage and retrieval.
+  // The unique identifier for this entity.
   String id;
 
   // The ID of the world this entity belongs to

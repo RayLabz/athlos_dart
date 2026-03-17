@@ -4,25 +4,25 @@ import 'package:athlos/src/core/model/player.dart';
 
 /// Represents a leaderboard.
 abstract class Leaderboard<PlayerType extends Player, PointType extends num> {
-  // The name of the leaderboard, which can be used for display and retrieval.
+  // The name of the leaderboard.
   String name;
 
   // The ID of the world session associated with the leaderboard.
   String worldSessionID;
 
-  // A description of the leaderboard, which can be used for display and retrieval.
+  // A description of the leaderboard.
   String description;
 
-  // The order in which players are ranked on the leaderboard, which can be used for display and retrieval.
+  // The order in which players are ranked on the leaderboard.
   LeaderboardOrder order;
 
-  // The scope of the leaderboard, which can be used for display and retrieval.
+  // The scope of the leaderboard.
   LeaderboardScope scope;
 
-  // A map of players to points representing the leaderboard, which can be used for display and retrieval.
+  // A map of players to points representing the leaderboard.
   Map<PlayerType, PointType> players = {};
 
-  // The timestamp of when the leaderboard was created, which can be used for display and retrieval.
+  // The timestamp of when the leaderboard was created.
   int createdOn = DateTime.now().millisecondsSinceEpoch;
 
   Leaderboard({

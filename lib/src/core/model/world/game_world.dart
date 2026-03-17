@@ -2,7 +2,7 @@
 abstract class GameWorld {
 
   //World data
-  String id; // The unique identifier for the world, which can be used for database storage and retrieval.
+  String id; // The unique identifier for the world.
   String userID; // The ID of the user who created the world, which can be used for ownership and permissions management.
   String name; // The name of the world, which can be displayed in the UI or used for logging.
   String? description; // A brief description of the world, which can be displayed in the UI or used for tooltips.

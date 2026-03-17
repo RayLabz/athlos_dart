@@ -1,7 +1,7 @@
 /// The GameSession class represents a session for a player in the game.
 abstract class GameSession {
 
-  String id; // The unique identifier for the game session, which can be used for database storage and retrieval.
+  String id; // The unique identifier for the game session.
   String playerID; // The ID of the player associated with the session, which can be used for account management and analytics.
   String ipAddress; // The IP address of the player associated with the session, which can be used for security and analytics.
   int createdOn = DateTime.now().millisecondsSinceEpoch; // The timestamp of when the session was created, which can be used for account management and analytics.
