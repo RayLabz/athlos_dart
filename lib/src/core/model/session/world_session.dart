@@ -2,6 +2,9 @@ import 'package:athlos/src/core/model/direction/angle3d.dart';
 
 import '../position/world_position.dart';
 
+/// Represents a session for a player in a world.
+/// Created when a player joins a specific world in a game. Destroyed when the player leaves the world.
+/// Note: The WorldSession is more ephemeral compared to the [GameSession].
 abstract class WorldSession<CameraPosition extends WorldPosition, CameraDirection extends Angle3D> {
 
   String id; // The unique identifier for the world session.

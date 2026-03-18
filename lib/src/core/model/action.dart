@@ -16,6 +16,6 @@ abstract class Action {
     required this.id,
     required this.name,
     required this.description,
-    required this.aoe
+    required this.aoe,
   });
 }

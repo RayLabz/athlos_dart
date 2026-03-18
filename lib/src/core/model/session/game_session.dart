@@ -1,4 +1,5 @@
 /// The GameSession class represents a session for a player in the game.
+/// Initiated when a player logs into the game. Destroyed when the player logs out.
 abstract class GameSession {
 
   String id; // The unique identifier for the game session.
