@@ -1,4 +1,4 @@
-import '../../../athlos.dart';
+import '../../../../athlos.dart';
 
 /// Represents a scheduled event in the game.
 abstract class ScheduledEvent<PositionType extends WorldPosition> {

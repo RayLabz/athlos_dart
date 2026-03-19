@@ -3,7 +3,7 @@
 ## Core Game Domain
 
 ~~- **Game**  
-  Defines a game type (ruleset, logic bindings, supported modes).~~
+Defines a game type (ruleset, logic bindings, supported modes).~~
 
 - **GameConfig**  
   Static configuration for a game (max players, rules, time limits).
@@ -12,53 +12,53 @@
   Variant of a game (ranked, casual, blitz, custom rules).
 
 ~~- **GameState**  
-  The authoritative, serializable state of a running game instance.~~
+The authoritative, serializable state of a running game instance.~~
 
 ~~- **GameSnapshot**  
-  A full capture of GameState at a specific point in time.~~
+A full capture of GameState at a specific point in time.~~
 
 - **GameTick**  
   A discrete simulation step (used in real-time or lockstep systems).
 
 ~~- **GameEvent**  
-  A domain event emitted during gameplay (e.g., “player eliminated”).~~
+A domain event emitted during gameplay (e.g., “player eliminated”).~~
 
 ~~- **GameAction**  
-  A player-initiated command that mutates game state.~~
+A player-initiated command that mutates game state.~~
 
-- **ActionResult**  
-  Outcome of processing an action (success, failure, side effects).
+~~- **ActionResult**  
+  Outcome of processing an action (success, failure, side effects).~~
 
-- **GameReducer**  
-  Deterministic logic that transforms state based on actions.
+~~- **GameReducer**  
+  Deterministic logic that transforms state based on actions.~~
 
 ~~- **GameSession**  
-  Runtime container binding players, state, and lifecycle.~~
+Runtime container binding players, state, and lifecycle.~~
 
 ---
 
 ## Player Domain
 
 ~~- **Player**  
-  Core identity of a user within the system.~~
+Core identity of a user within the system.~~
 
 ~~- **PlayerProfile**  
-  Public-facing player data (username, avatar, metadata).~~
+Public-facing player data (username, avatar, metadata).~~
 
-- **PlayerStats**  
-  Aggregated gameplay statistics (wins, losses, rating).
+~~- **PlayerStats**  
+  Aggregated gameplay statistics (wins, losses, rating).~~
 
-- **PlayerSettings**  
-  Preferences (controls, notifications, privacy).
+~~- **PlayerSettings**  
+  Preferences (controls, notifications, privacy).~~
 
-- **PlayerPresence**  
-  Real-time availability state (online, offline, in-game).
+~~- **PlayerPresence**  
+  Real-time availability state (online, offline, in-game).~~
 
-- **PlayerSession**  
-  Authenticated session instance (token, expiry, device).
+~~- **PlayerSession**  
+  Authenticated session instance (token, expiry, device).~~
 
-- **PlayerConnection**  
-  Active network connection (WebSocket, peer link).
+~~- **PlayerConnection**  
+  Active network connection (WebSocket, peer link).~~
 
 ---
 
@@ -67,54 +67,54 @@
 - **Match**  
   A fully instantiated game instance with participants.
 
-- **MatchConfig**  
-  Rules and parameters for a specific match.
+~~- **MatchConfig**  
+  Rules and parameters for a specific match.~~
 
-- **MatchState**  
-  Lifecycle state (waiting, active, completed).
+~~- **MatchState**  
+  Lifecycle state (waiting, active, completed).~~
 
-- **MatchResult**  
-  Final outcome (scores, winners, rankings).
+~~- **MatchResult**  
+  Final outcome (scores, winners, rankings).~~
 
-- **MatchParticipant**  
-  Player’s role and state within a match.
+~~- **MatchParticipant**  
+  Player’s role and state within a match.~~
 
 - **MatchHistory**  
   Persisted record of completed matches.
 
-- **Queue**  
-  A matchmaking pool grouping players by criteria.
+~~- **Queue**  
+  A matchmaking pool grouping players by criteria.~~
 
-- **QueueEntry**  
-  A player’s entry in a matchmaking queue.
+~~- **QueueEntry**  
+  A player’s entry in a matchmaking queue.~~
 
-- **MatchmakingRequest**  
-  Input describing desired match conditions.
+~~- **MatchmakingRequest**  
+  Input describing desired match conditions.~~
 
-- **MatchmakingTicket**  
-  Server-issued handle tracking matchmaking progress.
+~~- **MatchmakingTicket**  
+  Server-issued handle tracking matchmaking progress.~~
 
 ---
 
 ## Lobby System
 
-- **Lobby**  
-  Pre-game room where players gather before a match.
+~~- **Lobby**  
+  Pre-game room where players gather before a match.~~
 
-- **LobbyConfig**  
-  Settings for a lobby (visibility, max players, rules).
+~~- **LobbyConfig**  
+  Settings for a lobby (visibility, max players, rules).~~
 
-- **LobbyMember**  
-  Player’s state within a lobby (ready, host, spectator).
+~~- **LobbyMember**  
+  Player’s state within a lobby (ready, host, spectator).~~
 
-- **LobbyState**  
-  Current status of the lobby (open, full, starting).
+~~- **LobbyState**  
+  Current status of the lobby (open, full, starting).~~
 
-- **LobbyInvite**  
-  Invitation sent to players to join a lobby.
+~~- **LobbyInvite**  
+  Invitation sent to players to join a lobby.~~
 
-- **LobbyMessage**  
-  Message exchanged within a lobby context.
+~~- **LobbyMessage**  
+  Message exchanged within a lobby context.~~
 
 ---
 
@@ -151,26 +151,26 @@
 
 ## Leaderboards & Rankings
 
-- **Leaderboard**  
-  Definition of a ranking board (rules, scope, sorting).
+~~- **Leaderboard**  
+  Definition of a ranking board (rules, scope, sorting).~~
 
-- **LeaderboardEntry**  
-  A player’s ranked position and score.
+~~- **LeaderboardEntry**  
+  A player’s ranked position and score.~~
 
-- **LeaderboardSeason**  
-  Time-bounded leaderboard instance (for resets).
+~~- **LeaderboardSeason**  
+  Time-bounded leaderboard instance (for resets).~~
 
 - **LeaderboardConfig**  
   Parameters controlling ranking logic.
 
-- **Ranking**  
-  Computed ordering of players based on scores.
+~~- **Ranking**  
+  Computed ordering of players based on scores.~~
 
-- **ScoreRecord**  
-  A submitted score instance tied to an event or match.
+~~- **ScoreRecord**  
+  A submitted score instance tied to an event or match.~~
 
-- **ScoreHistory**  
-  Historical log of score changes over time.
+~~- **ScoreHistory**  
+  Historical log of score changes over time.~~
 
 ---
 

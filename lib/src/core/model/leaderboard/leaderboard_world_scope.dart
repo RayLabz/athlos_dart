@@ -1,0 +1,6 @@
+enum LeaderboardWorldScope {
+
+  global,
+  instance,
+
+}

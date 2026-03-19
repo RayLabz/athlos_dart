@@ -1,9 +1,11 @@
-import 'package:athlos/src/core/model/player_type.dart';
+import 'package:athlos/src/core/model/player/player_preferences.dart';
+import 'package:athlos/src/core/model/player/player_type.dart';
+import 'package:athlos/src/core/model/player/presence_status.dart';
 
-import 'leaderboard/player_stats.dart';
+import 'player_stats.dart';
 
 /// A class representing a player in the game.
-abstract class Player<PT extends PlayerType, PS extends PlayerStats> {
+abstract class Player<PT extends PlayerType, PS extends PlayerStats, PP extends PlayerPreferences> {
 
   // The unique identifier for the player.
   String id;
@@ -24,7 +26,13 @@ abstract class Player<PT extends PlayerType, PS extends PlayerStats> {
   PT type;
 
   // The stats of the player.
-  PS playerStats;
+  PS? playerStats;
+
+  // The preferences of the player.
+  PP? playerPreferences;
+
+  // The presence status of the player, determining their online status.
+  PresenceStatus presenceStatus;
 
   // The timestamp of when the player was created, which can be used for account management and analytics.
   int createdOn = DateTime.now().millisecondsSinceEpoch;
@@ -35,9 +43,11 @@ abstract class Player<PT extends PlayerType, PS extends PlayerStats> {
     required this.emailAddress,
     required this.teamID,
     required this.type,
-    required this.playerStats,
     required this.createdOn,
+    this.playerStats,
+    this.playerPreferences,
     this.lastLogin,
+    this.presenceStatus = PresenceStatus.offline
   });
 
 }

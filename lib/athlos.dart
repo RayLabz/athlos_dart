@@ -8,7 +8,7 @@ export "src/core/model/direction/hex_direction.dart";
 
 export "src/core/model/leaderboard/leaderboard.dart";
 export "src/core/model/leaderboard/leaderboard_order.dart";
-export "src/core/model/leaderboard/leaderboard_scope.dart";
+export "src/core/model/leaderboard/leaderboard_player_scope.dart";
 
 export "src/core/model/position/grid_position.dart";
 export "src/core/model/position/hex_position.dart";
@@ -32,7 +32,7 @@ export "src/core/model/world/game_world.dart";
 export "src/core/model/world/terrain_cell.dart";
 export "src/core/model/world/terrain_chunk.dart";
 
-export "src/core/model/action.dart";
+export "src/core/model/action/action.dart";
 export "src/core/model/entity.dart";
-export "src/core/model/player.dart";
+export "src/core/model/player/player.dart";
 export "src/core/model/team.dart";
