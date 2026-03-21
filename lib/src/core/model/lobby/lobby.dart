@@ -18,8 +18,8 @@ abstract class Lobby {
   /// The status of the lobby.
   LobbyStatus status;
 
-  // A list of IDs for players that are waiting to join the world.
-  List<String> waitingPlayerIDsQueue = [];
+  // A list of IDs for players that are in the lobby.
+  List<String> playerIDs = [];
 
   Lobby({
     required this.id,

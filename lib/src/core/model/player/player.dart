@@ -19,6 +19,12 @@ abstract class Player<PT extends PlayerType, PS extends PlayerStats, PP extends 
   // The ID of the team that the player belongs to, which can be used for team-based gameplay and matchmaking.
   String teamID;
 
+  /// The IDs of the friends of the player.
+  List<String> friendIDs = [];
+
+  /// The IDs of players who have been blocked by this player.
+  List<String> blockedPlayerIDs = [];
+
   // The timestamp of when the player last logged in.
   int? lastLogin;
 

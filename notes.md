@@ -176,64 +176,64 @@ Public-facing player data (username, avatar, metadata).~~
 
 ## Achievements & Progression
 
-- **Achievement**  
-  Definition of a goal or milestone.
+~~- **Achievement**  
+  Definition of a goal or milestone.~~
 
-- **PlayerAchievement**  
-  Player-specific achievement state (unlocked, progress).
+- ~~**PlayerAchievement**  
+  Player-specific achievement state (unlocked, progress).~~
 
-- **AchievementProgress**  
-  Incremental tracking toward completion.
+~~- **AchievementProgress**  
+  Incremental tracking toward completion.~~
 
-- **Reward**  
-  Incentive granted (currency, badge, unlockable).
+~~- **Reward**  
+  Incentive granted (currency, badge, unlockable).~~
 
-- **ProgressionTrack**  
-  Structured progression path (levels, tiers).
+~~- **ProgressionTrack**  
+  Structured progression path (levels, tiers).~~
 
-- **Level**  
-  Discrete progression milestone.
+~~- **Level**  
+  Discrete progression milestone.~~
 
 ---
 
 ## Social System
 
-- **Friend**  
-  Relationship between two players.
+~~- **Friend**  
+  Relationship between two players.~~
 
-- **FriendRequest**  
-  Pending request to establish friendship.
+~~- **FriendRequest**  
+  Pending request to establish friendship.~~
 
-- **BlockedPlayer**  
-  Player excluded from interaction.
+~~- **BlockedPlayer**  
+  Player excluded from interaction.~~
 
-- **Party**  
-  Temporary group of players joining matches together.
+~~- **Party**  
+  Temporary group of players joining matches together.~~
 
-- **PartyMember**  
-  Player’s role/state within a party.
+~~- **PartyMember**  
+  Player’s role/state within a party.~~
 
-- **Invite**  
-  Generic invitation (party, game, lobby).
+~~- **Invite**  
+  Generic invitation (party, game, lobby).~~
 
 ---
 
 ## Chat & Communication
 
-- **ChatChannel**  
-  Logical communication space (global, lobby, private).
+~~- **ChatChannel**  
+  Logical communication space (global, lobby, private).~~
 
-- **ChatMessage**  
-  Message sent between participants.
+~~- **ChatMessage**  
+  Message sent between participants.~~
 
-- **ChatParticipant**  
-  Player’s membership in a chat channel.
+~~- **ChatParticipant**  
+  Player’s membership in a chat channel.~~
 
-- **MessageAttachment**  
-  Media or data attached to messages.
+~~- **MessageAttachment**  
+  Media or data attached to messages.~~
 
-- **TypingIndicator**  
-  Real-time signal indicating message composition.
+~~- **TypingIndicator**  
+  Real-time signal indicating message composition.~~
 
 ---
 

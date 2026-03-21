@@ -1,35 +1,19 @@
+import 'package:athlos/src/core/model/invitation.dart';
+
 /// Represents a lobby invitation.
-abstract class LobbyInvitation {
-
-  /// The ID of the invitation.
-  String id;
-
-  /// The ID of the player sending the invite.
-  String senderID;
-
-  /// The ID of the player being invited.
-  String receiverID;
+abstract class LobbyInvitation extends Invitation {
 
   /// The ID of the world related to the invitation.
   String lobbyID;
 
-  /// An optional text set by the invitee.
-  String? text;
-
-  /// The timestamp of when the invite was created.
-  int sentOn = DateTime.now().millisecondsSinceEpoch;
-
-  /// The timestamp of when the invite was accepted.
-  int? acceptedOn;
-
   LobbyInvitation({
-    required this.id,
-    required this.senderID,
-    required this.receiverID,
+    required super.id,
+    required super.senderID,
+    required super.receiverID,
+    required super.text,
+    required super.sentOn,
+    required super.acceptedOn,
     required this.lobbyID,
-    required this.text,
-    required this.sentOn,
-    this.acceptedOn,
   });
 
 }
