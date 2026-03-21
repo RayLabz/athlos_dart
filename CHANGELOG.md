@@ -1,3 +1,16 @@
+## 0.0.2
+
+- Model updates:
+  - Achievements
+  - Entity types
+  - Lobby
+  - Logging
+  - Monetization
+  - Notifications
+  - Resources
+  - Social (messaging)
+  - Other renaming/refactoring.
+
 ## 0.0.1+1
 
 - Exported model, made available to consumers.
