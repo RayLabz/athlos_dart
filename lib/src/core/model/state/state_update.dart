@@ -1,7 +1,7 @@
 import '../entity.dart';
-import '../world/terrain_cell.dart';
+import '../world/spatial_unit.dart';
 
-abstract class StateUpdate<EntityType extends Entity, TerrainCellType extends TerrainCell> {
+abstract class StateUpdate<EntityType extends Entity, TerrainCellType extends SpatialUnit> {
 
   String worldSessionID; // The ID of the world session associated with this state update.
   Map<String, EntityType> entityUpdates = {}; // A map of entity IDs to their updated properties, representing the changes to the entities in the game world since the last state update.

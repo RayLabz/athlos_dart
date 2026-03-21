@@ -239,20 +239,20 @@ Public-facing player data (username, avatar, metadata).~~
 
 ## Persistence & Storage
 
-- **StoredGameState**  
-  Persisted version of a game state.
+~~- **StoredGameState**  
+  Persisted version of a game state.~~
 
-- **SnapshotRecord**  
-  Stored snapshot for rollback or recovery.
+~~- **SnapshotRecord**  
+  Stored snapshot for rollback or recovery.~~
 
-- **EventLog**  
-  Chronological record of system or gameplay events.
+~~- **EventLog**  
+  Chronological record of system or gameplay events.~~
 
-- **ActionLog**  
-  Sequence of actions applied to a game.
+~~- **ActionLog**  
+  Sequence of actions applied to a game.~~
 
-- **AuditLog**  
-  Record of critical system changes for traceability.
+~~- **AuditLog**  
+  Record of critical system changes for traceability.~~
 
 ---
 

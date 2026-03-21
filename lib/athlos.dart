@@ -29,8 +29,8 @@ export "src/core/model/transform/vector_transform_2d.dart";
 export "src/core/model/transform/vector_transform_3d.dart";
 
 export "src/core/model/world/game_world.dart";
-export "src/core/model/world/terrain_cell.dart";
-export "src/core/model/world/terrain_chunk.dart";
+export "src/core/model/world/spatial_unit.dart";
+export "src/core/model/world/spatial_partition.dart";
 
 export "src/core/model/action/action.dart";
 export "src/core/model/entity.dart";

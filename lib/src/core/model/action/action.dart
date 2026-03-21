@@ -5,7 +5,7 @@ abstract class Action {
   // The unique identifier for the action.
   String id;
 
-  // The name of the action, which can be displayed in the UI or used for logging.
+  // The name of the action.
   String name;
 
   // A brief description of the action, which can be displayed in the UI or used for tooltips.

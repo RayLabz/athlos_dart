@@ -10,7 +10,7 @@ abstract class Player<PT extends PlayerType, PS extends PlayerStats, PP extends 
   // The unique identifier for the player.
   String id;
 
-  // The player's nickname, which can be displayed in the UI or used for logging.
+  // The player's nickname
   String nickname;
 
   // The player's email address, which can be used for account management and communication.

@@ -2,11 +2,13 @@ import 'package:crypto/crypto.dart';
 import 'package:athlos/src/core/model/position/grid_position.dart';
 import 'dart:convert';
 
-import 'package:athlos/src/core/model/world/terrain_cell.dart';
+import 'package:athlos/src/core/model/world/spatial_unit.dart';
 
-/// Represents a chunk of terrain in the world. Each chunk is a square area of the world that can be loaded and unloaded independently.
-/// This allows for efficient loading and unloading of terrain as the player moves around the world.
-abstract class TerrainChunk {
+/// Represents a spatial partition, i.e., chunk of terrain in the world or a chunk of the game's state.
+/// Each partition is a square area of the world that can be loaded and unloaded independently.
+/// This allows for efficient loading and unloading of e.g., terrain as the player moves around the world.
+/// This can also model less scalable states such as game boards.
+abstract class SpatialPartition {
 
   // A unique identifier for the chunk, which can be used for caching and retrieval. This is generated based on the world ID and the chunk's position to ensure uniqueness across different worlds and positions.
   String id;
@@ -18,9 +20,9 @@ abstract class TerrainChunk {
   GridPosition position;
 
   // A map of terrain cells that belong to this chunk, where the key is the cell ID and the value is the TerrainCell object. This allows for efficient retrieval of terrain cells within the chunk.
-  Map<String, TerrainCell> cells = {};
+  Map<String, SpatialUnit> units = {};
 
-  TerrainChunk({
+  SpatialPartition({
     required this.worldID,
     required this.position,
   }) : id = md5.convert(utf8.encode("$worldID:${position.x}:${position.y}")).toString();

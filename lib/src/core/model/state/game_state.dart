@@ -1,11 +1,11 @@
-import 'package:athlos/src/core/model/world/terrain_cell.dart';
+import 'package:athlos/src/core/model/world/spatial_unit.dart';
 
 import '../entity.dart';
 
 /// Represents the current state of the game world.
 /// Note: In many games, due to scalability requirements, the [GameState] may be partial rather than a full game state.
 /// Whereas, in other, less demanding games, the [GameState] may be a full game state.
-abstract class GameState<EntityType extends Entity, TerrainCellType extends TerrainCell> {
+abstract class GameState<EntityType extends Entity, TerrainCellType extends SpatialUnit> {
 
   // The ID of the world session associated with this game state.
   String worldSessionID;
