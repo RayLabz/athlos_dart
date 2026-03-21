@@ -33,6 +33,6 @@ export "src/core/model/world/spatial_unit.dart";
 export "src/core/model/world/spatial_partition.dart";
 
 export "src/core/model/action/action.dart";
-export "src/core/model/entity.dart";
+export "src/core/model/entity/entity.dart";
 export "src/core/model/player/player.dart";
 export "src/core/model/team.dart";

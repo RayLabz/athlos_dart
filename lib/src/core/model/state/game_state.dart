@@ -1,6 +1,6 @@
 import 'package:athlos/src/core/model/world/spatial_unit.dart';
 
-import '../entity.dart';
+import '../entity/entity.dart';
 
 /// Represents the current state of the game world.
 /// Note: In many games, due to scalability requirements, the [GameState] may be partial rather than a full game state.

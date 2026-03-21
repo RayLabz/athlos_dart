@@ -1,4 +1,4 @@
-import '../entity.dart';
+import '../entity/entity.dart';
 import '../world/spatial_unit.dart';
 
 abstract class StateUpdate<EntityType extends Entity, TerrainCellType extends SpatialUnit> {
