@@ -1,3 +1,6 @@
+## 0.0.2+1
+- Exported API.
+
 ## 0.0.2
 
 - Model updates:
