@@ -1,9 +1,9 @@
 import '../../../athlos.dart';
 import '../model/action/action_result.dart';
-import '../model/event/event_record.dart';
+import '../model/logging/world_event_log_entry.dart';
 
 /// Represents a reducer that transforms a state based on an action.
-abstract class StateReducer<StateType extends GameState, ActionType extends Action, EventType extends EventRecord> {
+abstract class StateReducer<StateType extends GameState, ActionType extends Action, EventType extends WorldEventLogEntry> {
 
   /// Reduces the given state based on the given action and state.
   /// Returns a new state and a list of events.

@@ -258,20 +258,20 @@ Public-facing player data (username, avatar, metadata).~~
 
 ## Analytics & Logging
 
-- **AnalyticsEvent**  
-  Structured event for tracking user or system behavior.
+~~- **AnalyticsEvent**  
+  Structured event for tracking user or system behavior.~~
 
-- **Metric**  
-  Aggregated measurement (DAU, match duration, etc.).
+~~- **Metric**  
+  Aggregated measurement (DAU, match duration, etc.).~~
 
-- **SessionLog**  
-  Record of player session activity.
+~~- **SessionLog**  
+  Record of player session activity.~~
 
-- **ErrorLog**  
-  Captured system or runtime errors.
+~~- **ErrorLog**  
+  Captured system or runtime errors.~~
 
-- **TelemetryRecord**  
-  Low-level performance or usage data.
+~~- **TelemetryRecord**  
+  Low-level performance or usage data.~~
 
 ---
 
