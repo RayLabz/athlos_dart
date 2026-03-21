@@ -293,20 +293,20 @@ Public-facing player data (username, avatar, metadata).~~
 
 ## Monetization (Optional)
 
-- **Currency**  
-  Virtual or real currency definition.
+~~- **Currency**  
+  Virtual or real currency definition.~~
 
-- **Wallet**  
-  Player’s balance and holdings.
+~~- **Wallet**  
+  Player’s balance and holdings.~~
 
-- **Transaction**  
-  Record of currency movement.
+~~- **Transaction**  
+  Record of currency movement.~~
 
-- **Purchase**  
-  Item or service bought by a player.
+~~- **Purchase**  
+  Item or service bought by a player.~~
 
-- **Offer**  
-  Available purchasable bundle or promotion.
+~~- **Offer**  
+  Available purchasable bundle or promotion.~~
 
 ---
 
@@ -321,11 +321,11 @@ Public-facing player data (username, avatar, metadata).~~
 - **RateLimit**  
   Constraints on request frequency.
 
-- **Notification**  
-  Message sent to player outside gameplay.
+~~- **Notification**  
+  Message sent to player outside gameplay.~~
 
-- **NotificationPreference**  
-  Player’s notification settings.
+~~- **NotificationPreference**  
+  Player’s notification settings.~~
 
 ---
 
