@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:athlos/athlos.dart';
@@ -100,6 +101,57 @@ void main() {
 
       await Future<void>.delayed(const Duration(milliseconds: 40));
       expect(server.clients.length, 0);
+
+      rawClient.close();
+      server.close();
+    });
+
+    test('server triggers client lifecycle callbacks', () async {
+      final port = await _findOpenPort();
+      final connectedCompleter = Completer<UdpClientInfo>();
+      final disconnectedCompleter = Completer<UdpClientInfo>();
+
+      final server = UdpServer(
+        port: port,
+        onMessage: (_, __, ___) {},
+        tickRate: const Duration(milliseconds: 20),
+        clientTimeout: const Duration(seconds: 3),
+        onClientConnected: (client) {
+          if (!connectedCompleter.isCompleted) {
+            connectedCompleter.complete(client);
+          }
+        },
+        onClientDisconnected: (client) {
+          if (!disconnectedCompleter.isCompleted) {
+            disconnectedCompleter.complete(client);
+          }
+        },
+      );
+
+      await server.start();
+
+      final rawClient = await RawDatagramSocket.bind(
+        InternetAddress.loopbackIPv4,
+        0,
+      );
+
+      rawClient.send(
+        UdpControlMessage.handshake(),
+        InternetAddress.loopbackIPv4,
+        port,
+      );
+
+      final connectedClient = await connectedCompleter.future;
+
+      rawClient.send(
+        UdpControlMessage.disconnect(),
+        InternetAddress.loopbackIPv4,
+        port,
+      );
+
+      final disconnectedClient = await disconnectedCompleter.future;
+
+      expect(disconnectedClient.key, connectedClient.key);
 
       rawClient.close();
       server.close();

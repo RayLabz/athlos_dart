@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
+import '../core/net/network_logger.dart';
 import '../core/net/udp_control_message.dart';
 import 'udp_client_message_handler.dart';
 
 /// Represents a client connected to the server.
 class UdpClient {
-
   /// The address of the server this client will connect to.
   final InternetAddress serverAddress;
 
@@ -28,6 +28,9 @@ class UdpClient {
 
   /// The interval at which the client will send a handshake message to the server.
   final Duration handshakeInterval;
+
+  /// Logger used by this client.
+  final NetworkLogger logger;
 
   /// The socket used to communicate with the server.
   late final RawDatagramSocket _socket;
@@ -52,13 +55,18 @@ class UdpClient {
     this.onStart,
     this.tickRate = const Duration(milliseconds: 200),
     this.handshakeInterval = const Duration(minutes: 1),
-  });
+    NetworkLogger? logger,
+  }) : logger = logger ?? NetworkLogger();
 
   /// Starts the client.
   Future<void> start() async {
     if (onStart != null) await onStart!();
     _socket = await RawDatagramSocket.bind(InternetAddress.anyIPv4, 0);
     _isStarted = true;
+    logger.log(
+      'UdpClient',
+      'Connected to ${serverAddress.address}:$serverPort.',
+    );
 
     _socket.listen(_handleEvent);
     _scheduleHandshake();
@@ -95,6 +103,7 @@ class UdpClient {
 
   /// Closes the client.
   void close() {
+    logger.log('UdpClient', 'Closing client.');
     disconnect();
   }
 
@@ -125,6 +134,10 @@ class UdpClient {
     if (_isStarted) {
       _socket.close();
     }
-  }
 
+    logger.log(
+      'UdpClient',
+      'Disconnected from ${serverAddress.address}:$serverPort.',
+    );
+  }
 }

@@ -2,12 +2,15 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
+import '../core/net/network_logger.dart';
 import '../core/net/udp_control_message.dart';
 import 'udp_client_info.dart';
 import 'udp_server_message_handler.dart';
 
 /// Represents a server.
 class UdpServer {
+  /// Logical name of this server instance used in logs.
+  final String name;
 
   /// The port of the server.
   final int port;
@@ -18,6 +21,12 @@ class UdpServer {
   /// A callback that will be called periodically to update the server (e.g., for game loops).
   final UdpServerOnTick? onTick;
 
+  /// A callback that will be called when a new client is first seen.
+  final UdpServerOnClientConnected? onClientConnected;
+
+  /// A callback that will be called when a client disconnects or times out.
+  final UdpServerOnClientDisconnected? onClientDisconnected;
+
   /// A callback that will be called when the client starts.
   final Future Function()? onStart;
 
@@ -26,6 +35,9 @@ class UdpServer {
 
   /// The interval at which the server will check for inactive clients.
   final Duration clientTimeout;
+
+  /// Logger used by this server.
+  final NetworkLogger logger;
 
   /// The socket used to communicate with the clients.
   late final RawDatagramSocket _socket;
@@ -37,13 +49,17 @@ class UdpServer {
   final Map<String, UdpClientInfo> _clients = {};
 
   UdpServer({
+    this.name = 'AthlosUDPServer',
     required this.port,
     required this.onMessage,
     this.onTick,
+    this.onClientConnected,
+    this.onClientDisconnected,
     this.onStart,
     this.tickRate = const Duration(milliseconds: 200),
     this.clientTimeout = const Duration(minutes: 1),
-  });
+    NetworkLogger? logger,
+  }) : logger = logger ?? NetworkLogger();
 
   /// Returns the clients connected to the server.
   Iterable<UdpClientInfo> get clients => _clients.values;
@@ -53,6 +69,7 @@ class UdpServer {
     if (onStart != null) await onStart!();
 
     _socket = await RawDatagramSocket.bind(InternetAddress.anyIPv4, port);
+    logger.log(name, 'Started on port $port.');
 
     _socket.listen(_handleEvent);
 
@@ -83,16 +100,23 @@ class UdpServer {
       final removed = _clients.remove(key);
 
       if (removed != null) {
-        print('Client disconnected: ${removed.key}');
+        logger.log(name, 'Client disconnected: ${removed.key}');
+        onClientDisconnected?.call(removed);
       }
 
       return;
     }
 
-    final client = _clients.putIfAbsent( //Create new client if not exists
-      key,
-      () => UdpClientInfo(address, port),
-    );
+    var isNewClient = false;
+    final client = _clients.putIfAbsent(key, () {
+      isNewClient = true;
+      return UdpClientInfo(address, port);
+    });
+
+    if (isNewClient) {
+      logger.log(name, 'Client connected: ${client.key}');
+      onClientConnected?.call(client);
+    }
 
     if (UdpControlMessage.isHandshake(message)) {
       client.lastSeen = DateTime.now();
@@ -110,7 +134,8 @@ class UdpServer {
       final inactive = now.difference(client.lastSeen) > clientTimeout;
 
       if (inactive) {
-        print('client timeout: ${client.key}');
+        logger.log(name, 'Client timeout: ${client.key}');
+        onClientDisconnected?.call(client);
       }
 
       return inactive;
@@ -138,8 +163,15 @@ class UdpServer {
 
   /// Closes the server.
   void close() {
+    logger.log(name, 'Closing server.');
     _tickTimer?.cancel();
     _socket.close();
-  }
 
+    final disconnectedClients = _clients.values.toList(growable: false);
+    _clients.clear();
+
+    for (final client in disconnectedClients) {
+      onClientDisconnected?.call(client);
+    }
+  }
 }
