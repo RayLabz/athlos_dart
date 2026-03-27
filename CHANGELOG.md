@@ -1,3 +1,11 @@
+## 0.0.4
+- Added `TcpClient` and `TcpServer` implementations with support for framed messages using a 4-byte length prefix.
+- Introduced `tcpConnectionWorkerMain` to handle TCP message reassembly in a dedicated isolate.
+- Implementd `NetworkLogger` for configurable console and file logging across UDP and TCP components.
+- Enhanced `UdpServer` and `UdpClient` with logging and lifecycle callbacks (`onClientConnected`, `onClientDisconnected`).
+- Added comprehensive tests for TCP networking, client lifecycle events, and network logging.
+- Exported new TCP and logging components in the main library file.
+
 ## 0.0.3
 - Basic UDP Server.
 

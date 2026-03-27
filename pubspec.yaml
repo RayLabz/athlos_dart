@@ -1,6 +1,6 @@
 name: athlos
 description: A Dart package for implementing multiplayer online games.
-version: 0.0.3
+version: 0.0.4
 homepage: "https://pub.dev/packages/athlos/"
 repository: "https://github.com/RayLabz/athlos_dart"
 
