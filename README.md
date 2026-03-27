@@ -7,7 +7,7 @@ The `athlos` package helps model multiplayer online games (and backends) by defi
 ## Indicative Features
 
 * Game state definition
-* Server generation
+* Server creation
 * Online state sync (multiple methods)
 * Data persistence
 * Matchmaking, Lobbies & Host management
@@ -17,3 +17,17 @@ The `athlos` package helps model multiplayer online games (and backends) by defi
 * Action logging
 * Chat & Presence
 * Different types of games (turn-based, casual real-time, board games, puzzles, etc.)
+
+## Gateway / Relay Baseline
+
+Athlos now includes a baseline gateway routing layer:
+
+* `client -> gateway -> game server`
+* Authentication via pluggable `GatewayAuthenticator`
+* Matchmaking via pluggable `GatewayMatchmaker`
+* Load balancing via pluggable `GatewayLoadBalancer`
+* Session routing via `GatewaySessionRouter`
+* Basic DDoS/rate limiting via `GatewayDdosGuard`
+
+The gateway can be exposed over TCP (`GatewayTcpServer`) and UDP (`GatewayUdpServer`),
+and returns backend route information + session IDs to clients.

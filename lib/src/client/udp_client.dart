@@ -21,7 +21,7 @@ class UdpClient {
   final UdpClientOnTick? onTick;
 
   /// A callback that will be called when the client starts.
-  final Future Function()? onStart;
+  final Future<void> Function()? onStart;
 
   /// The interval at which the client will send a handshake message to the server.
   final Duration tickRate;

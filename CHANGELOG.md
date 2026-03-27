@@ -1,10 +1,21 @@
 ## 0.0.4
+(a) Implemented TCP Client/Server and introduced logging components (file, console).
 - Added `TcpClient` and `TcpServer` implementations with support for framed messages using a 4-byte length prefix.
 - Introduced `tcpConnectionWorkerMain` to handle TCP message reassembly in a dedicated isolate.
 - Implementd `NetworkLogger` for configurable console and file logging across UDP and TCP components.
 - Enhanced `UdpServer` and `UdpClient` with logging and lifecycle callbacks (`onClientConnected`, `onClientDisconnected`).
 - Added comprehensive tests for TCP networking, client lifecycle events, and network logging.
 - Exported new TCP and logging components in the main library file.
+
+(b) Implementing gateway routing for TCP/UDP:
+- Added `GatewayRelay` to orchestrate authentication, matchmaking, and session routing.
+- Implemented `GatewayTcpServer` and `GatewayUdpServer` to handle client gateway requests.
+- Added pluggable services for authentication (`GatewayAuthenticator`), matchmaking (`GatewayMatchmaker`), load balancing (`GatewayLoadBalancer`), and DDoS protection (`GatewayDdosGuard`).
+- Added `BackendNodeStore` for optional file-backed persistence of backend game servers.
+- Defined `GatewayPacket` protocol and opcodes for client-gateway communication.
+- Updated `athlos.dart` to export new gateway models, services, and runtime classes.
+- Added comprehensive tests for `GatewayRelay`, `GatewayTcpServer`, and backend management.
+- Provided a functional REPL example for dynamic backend management in `athlos_example.dart`.
 
 ## 0.0.3
 - Basic UDP Server.

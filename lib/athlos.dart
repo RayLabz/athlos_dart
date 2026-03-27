@@ -108,6 +108,29 @@ export "src/core/model/world/world_status.dart";
 export "src/core/net/network_logger.dart";
 export "src/core/net/udp_control_message.dart";
 
+// Gateway: Protocol
+export "src/gateway/protocol/gateway_opcode.dart";
+export "src/gateway/protocol/gateway_packet.dart";
+
+// Gateway: Models
+export "src/gateway/model/backend_node.dart";
+export "src/gateway/model/gateway_route_info.dart";
+export "src/gateway/model/gateway_session.dart";
+export "src/gateway/model/gateway_transport.dart";
+
+// Gateway: Services
+export "src/gateway/service/backend_node_store.dart";
+export "src/gateway/service/ddos_guard.dart";
+export "src/gateway/service/gateway_authenticator.dart";
+export "src/gateway/service/gateway_matchmaker.dart";
+export "src/gateway/service/load_balancer.dart";
+export "src/gateway/service/session_router.dart";
+
+// Gateway: Runtime
+export "src/gateway/gateway_relay.dart";
+export "src/gateway/gateway_tcp_server.dart";
+export "src/gateway/gateway_udp_server.dart";
+
 // Networking: Server
 export "src/server/tcp_client_info.dart";
 export "src/server/tcp_server.dart";
