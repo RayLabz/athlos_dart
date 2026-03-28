@@ -1,3 +1,11 @@
+## 0.0.5
+Implemented HTTP client and server:
+
+- Added `HttpClient` and `HttpServer` implementations with support for routing and common HTTP methods.
+- Introduceed `HttpRequestContext` for simplified response handling (JSON, text, binary).
+- Added `Service` abstract class to the core service layer.
+- Included examples and tests for HTTP client and server functionality.
+
 ## 0.0.4
 (a) Implemented TCP Client/Server and introduced logging components (file, console).
 - Added `TcpClient` and `TcpServer` implementations with support for framed messages using a 4-byte length prefix.

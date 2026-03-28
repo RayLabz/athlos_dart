@@ -132,6 +132,8 @@ export "src/gateway/gateway_tcp_server.dart";
 export "src/gateway/gateway_udp_server.dart";
 
 // Networking: Server
+export "src/server/http_server.dart";
+export "src/server/http_server_message_handler.dart";
 export "src/server/tcp_client_info.dart";
 export "src/server/tcp_server.dart";
 export "src/server/tcp_server_message_handler.dart";
@@ -140,6 +142,8 @@ export "src/server/udp_server.dart";
 export "src/server/udp_server_message_handler.dart";
 
 // Networking: Client
+export "src/client/http_client.dart";
+export "src/client/http_client_message_handler.dart";
 export "src/client/tcp_client.dart";
 export "src/client/tcp_client_message_handler.dart";
 export "src/client/udp_client.dart";

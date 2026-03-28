@@ -31,3 +31,15 @@ Athlos now includes a baseline gateway routing layer:
 
 The gateway can be exposed over TCP (`GatewayTcpServer`) and UDP (`GatewayUdpServer`),
 and returns backend route information + session IDs to clients.
+
+## HTTP Server
+
+Athlos also includes a lightweight HTTP server with method/path routing:
+
+* Register handlers with `get`, `post`, `put`, `patch`, `delete`, or `route`.
+* Route by URL path and HTTP method.
+* Built-in JSON/text response helpers via `HttpRequestContext`.
+* Default `404` and `405` responses, plus optional custom not-found handler.
+
+See `example/http_server_example.dart` for a minimal runnable setup.
+
